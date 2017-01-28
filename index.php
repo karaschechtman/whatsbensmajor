@@ -9,14 +9,14 @@
 
     </head>
 	<body>
-        <?php 
-            $dbhost = getenv('DB_HOST');
-            $dbuser = getenv('DB_USERNAME');
-            $dbpass = getenv('DB_PASS');
-            $conn = new mysqli($dbhost, $dbuser, $dbpass);
-            if($conn->connect_error) {
-                die('Could not connect: ' . $conn->connect_error);
-            }
+        <?
+            $link = pg_Connect("dbname=" + getenv('DB_HOST') + " user=" + getenv('DB_USERNAME') + " password=" + getenv('DB_PASS'));
+            $result = pg_exec($link, "select * from major");
+            $numrows = pg_numrows($result);
+            echo "<p>link = $link<br>
+            result = $result<br>
+            numrows = $numrows</p>
+            ";
         ?>
         <div class = "cornericons">
             <span class="glyphicon glyphicon-envelope"></span>
