@@ -14,10 +14,11 @@
             $NAME = getenv('DB_NAME');
             $USER = getenv('DB_USERNAME');
             $PASS = getenv('DB_PASS');
-            $dbconn = pg_connect("hostaddr=$HOST dbname=$NAME user=$USER password=$PASS");
-            $result = pg_query($dbconn, "SELECT * FROM benmajor");
+            $dbconn = pg_connect("hostaddr=$HOST port=5432 dbname=$NAME user=$USER password=$PASS");
+            echo $dbconn;
+            $result = pg_query($dbconn, "SELECT * FROM benmajor;");
             if (!$result) {
-                echo "error" . pg_last_error();
+                echo "An error occurred.\n";
                 exit;
             }
 
