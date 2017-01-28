@@ -10,11 +10,14 @@
     </head>
 	<body>
         <?php
-            $link = pg_Connect("dbname=" + getenv('DB_HOST') + " user=" + getenv('DB_USERNAME') + " password=" + getenv('DB_PASS'));
+            $HOST = getenv('DB_HOST');
+            $NAME = getenv('DB_NAME');
+            $USER = getenv('DB_USERNAME');
+            $PASS = getenv('DB_PASS');
+            $link = pg_connect("host=$HOST port=5432 dbname=$DB_NAME user=$USER password=$DB_PASS");
             $result = pg_exec($link, "select * from benmajor");
             $numrows = pg_numrows($result);
-            $HOST = getenv('DB_HOST');
-            echo $HOST;
+            
             echo "<p>link = $link<br>
             result = $result<br>
             numrows = $numrows</p>
