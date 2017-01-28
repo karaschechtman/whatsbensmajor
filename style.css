@@ -1,0 +1,59 @@
+.passwordentry {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    color:white;
+    width:100%;
+    line-height:55px;
+    font-size:50px;
+}
+
+.title {
+    width:100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size:60px;
+}
+
+.box {
+    text-align:center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    max-width:700px;
+}
+
+.text {
+    padding:15px;
+    
+}
+.input {
+    width: 100%;
+    border:0px white;
+    background-color:red;
+    color:white;
+    font-size:60px;
+    outline:none;
+    text-align:center;
+    margin-bottom:30px;
+    -webkit-appearance: none;
+}
+
+
+
+body {
+    margin:0px;
+    background-color:red;
+    color:white;
+    font-family: 'Noto Serif', serif;
+    font-size:30px;
+}
+
+.cornericons {
+    font-color:white;
+    padding:30px;
+    letter-spacing:10px;
+}
