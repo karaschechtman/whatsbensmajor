@@ -14,14 +14,17 @@
             $NAME = getenv('DB_NAME');
             $USER = getenv('DB_USERNAME');
             $PASS = getenv('DB_PASS');
-            $link = pg_connect("host=$HOST port=5432 dbname=$DB_NAME user=$USER password=$DB_PASS");
-            $result = pg_exec($link, "select * from benmajor");
-            $numrows = pg_numrows($result);
-            
-            echo "<p>link = $link<br>
-            result = $result<br>
-            numrows = $numrows</p>
-            ";
+            $dbconn = pg_connect("host=$HOST port=5432 dbname=$DB_NAME user=$USER password=$DB_PASS");
+           $result = pg_query($dbconn, "SELECT * FROM benmajor");
+            if (!$result) {
+                echo "An error occurred.\n";
+                exit;
+            }
+
+            while ($row = pg_fetch_row($result)) {
+                echo "Date: $row[0]  Major: $row[1]";
+                echo "<br />\n";
+            }
         ?>
 
         <div class = "cornericons">
