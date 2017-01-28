@@ -9,9 +9,9 @@
 
     </head>
 	<body>
-        <?
+        <?php
             $link = pg_Connect("dbname=" + getenv('DB_HOST') + " user=" + getenv('DB_USERNAME') + " password=" + getenv('DB_PASS'));
-            $result = pg_exec($link, "select * from major");
+            $result = pg_exec($link, "select * from benmajor");
             $numrows = pg_numrows($result);
             echo "<p>link = $link<br>
             result = $result<br>
