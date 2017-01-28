@@ -11,7 +11,7 @@
 	<body>
         <?php 
             $dbhost = getenv('DB_HOST');
-            $dbuser = getenv('farfygmtjbsjcb');
+            $dbuser = getenv('DB_USERNAME');
             $dbpass = getenv('DB_PASS');
             $conn = new mysqli($dbhost, $dbuser, $dbpass);
             if($conn->connect_error) {
