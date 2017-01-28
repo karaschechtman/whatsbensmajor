@@ -6,8 +6,18 @@
         <link rel="stylesheet" type="text/css" href="style.css"> <!--STYLE-->
         
         <title>What's Ben's Major?</title>
+
     </head>
 	<body>
+        <?php 
+            $dbhost = getenv('DB_HOST');
+            $dbuser = getenv('farfygmtjbsjcb');
+            $dbpass = getenv('DB_PASS');
+            $conn = new mysqli($dbhost, $dbuser, $dbpass);
+            if($conn->connect_error) {
+                die('Could not connect: ' . $conn->connect_error);
+            }
+        ?>
         <div class = "cornericons">
             <span class="glyphicon glyphicon-envelope"></span>
             <span class="glyphicon glyphicon-pencil"></span>
