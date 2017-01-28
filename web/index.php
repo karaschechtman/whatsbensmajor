@@ -9,12 +9,6 @@
 
     </head>
 	<body>
-
-        <div class = "cornericons">
-            <span class="glyphicon glyphicon-envelope"></span>
-            <span class="glyphicon glyphicon-pencil"></span>
-            <span class="glyphicon glyphicon-question-sign"></span>
-        </div>
         <?php
             $dbopts = parse_url(getenv('DATABASE_URL'));
             $app->register(new Herrera\Pdo\PdoServiceProvider(),
@@ -35,11 +29,17 @@
                 $majors[] = $row;
             }
 
-            return $app['twig']->render('database.twig', array(
-            'majors' => $majors
-            ));
-            });
+  return $app['twig']->render('database.twig', array(
+    'names' => $names
+  ));
+});
         ?>
+
+        <div class = "cornericons">
+            <span class="glyphicon glyphicon-envelope"></span>
+            <span class="glyphicon glyphicon-pencil"></span>
+            <span class="glyphicon glyphicon-question-sign"></span>
+        </div>
         
         <div class = "box">
             <div class = "title">What is Ben's Major?</div>

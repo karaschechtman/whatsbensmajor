@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<p>Got these rows from the database:</p>
+
+<ul>
+{% for m in majors %}
+  <li> {{ m.major }} </li>
+{% else %}
+  <li>Majorless!</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
