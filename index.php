@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="style.css"> <!--STYLE-->
         
         <title>What's Ben's Major?</title>
+        <link href="favicon.ico" rel="icon" type="image/x-icon" />
 
     </head>
 	<body>
