@@ -15,16 +15,21 @@
                 return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there                too
             }
 
-            echo "<div class = \"cornericons\">
+            echo "
+            <div class = \"cornericons\">
                 <span class=\"glyphicon glyphicon-envelope\"></span>
                 <span class=\"glyphicon glyphicon-pencil\"></span>
                 <span class=\"glyphicon glyphicon-question-sign\"></span>
             </div>
             ";
             $pg_conn = pg_connect(pg_connection_string_from_database_url());
-            $result = pg_query($pg_conn, "SELECT * FROM benmajor");
+            $result = pg_query($pg_conn, "SELECT * FROM benmajor ORDER BY datestamp DESC LIMIT 1");
             if (!pg_num_rows($result)) {
-                echo 'The database is empty!';
+                echo "
+                <div class = \"box\">
+                    <div class = \"title\">What is Ben's Major?</div>
+                    <div class = \"text\">We have no data on Ben's major :(</div>
+                </div>";
             }   
             else {
             $row = pg_fetch_row($result);
