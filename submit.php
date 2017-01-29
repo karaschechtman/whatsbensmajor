@@ -26,8 +26,11 @@
                 <div class = "title">Please prove that you are Ben.</div>
                 <form action = "submit.php" id="form" method="POST">
                     <input type="password" name="pwd" autofocus class="password">
+                    <div class="line"></div>
+                    <br />
                     <input type="submit" name="submit" value="GO FORTH" style="font-family:'Montserrat',sans-serif;">
                 </form>
+                
             </div>
             <?}
         ?>
