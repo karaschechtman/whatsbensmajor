@@ -70,3 +70,15 @@ body {
     padding:30px;
     letter-spacing:10px;
 }
+
+.credits {
+    font-size:20px;
+    font-family:'Montserrat',sans-serif;
+    text-align:right;
+    padding:30px;
+}
+
+.credits > a, a:active {
+    color:white;
+    font-decoration:underline;
+}
