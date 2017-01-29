@@ -16,30 +16,30 @@
                 extract(parse_url($_ENV["DATABASE_URL"]));
                 return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there                too
             }
+
+            echo " <div class = \"cornericons\">
+            <span class=\"glyphicon glyphicon-envelope\"></span>
+            <span class=\"glyphicon glyphicon-pencil\"></span>
+            <span class=\"glyphicon glyphicon-question-sign\"></span>
+        </div>
+            ";
             # Here we establish the connection. Yes, that's all.
             $pg_conn = pg_connect(pg_connection_string_from_database_url());
             # Now let's use the connection for something silly just to prove it works:
             $result = pg_query($pg_conn, "SELECT * FROM benmajor");
-            print "<pre>\n";
-        if (!pg_num_rows($result)) {
-            print("Your connection is working, but your database is empty.\nFret not. This is expected for new apps.\n");
-        }   
-        else {
-            print "Tables in your database:\n";
-        while ($row = pg_fetch_row($result)) { print("- $row[0]\n"); }
+            if (!pg_num_rows($result)) {
+                echo 'The database is empty!';
+            }   
+            else {
+            $row = pg_fetch_row($result);
+            echo "
+            <div class = \"box\">
+                <div class = \"title\">What is Ben's Major?</div>
+                <div class = \"text\">Ben most recently switched his major to $row[1] on $row[0].</div>
+            </div>";
         }
-        print "\n";
         ?>
 
-        <div class = "cornericons">
-            <span class="glyphicon glyphicon-envelope"></span>
-            <span class="glyphicon glyphicon-pencil"></span>
-            <span class="glyphicon glyphicon-question-sign"></span>
-        </div>
         
-        <div class = "box">
-            <div class = "title">What is Ben's Major?</div>
-            <div class = "text">Ben most recently switched his major to Economics and Philosophy on 01/27/17. </div>
-        </div>
 	</body>
 </html>
