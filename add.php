@@ -15,7 +15,7 @@
         $timezone = date_default_timezone_set("America/New_York");
         $today = pg_escape_string(date('m/d/Y'));
         $major = pg_escape_string($_POST['newmajor']);
-        $query = "INSERT INTO benmajor VALUES($today,$major)";
+        $query = "INSERT INTO benmajor VALUES('$today','$major')";
         $result = pg_query($query);
         if (!$result) { ?>  <div class = "cornericons">
                 <a style = "color:white;" href = "/"><span class="glyphicon glyphicon-home"></span></a>
