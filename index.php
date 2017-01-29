@@ -18,9 +18,10 @@
 
             echo "
             <div class = \"cornericons\">
-                <span class=\"glyphicon glyphicon-envelope\"></span>
-                <span class=\"glyphicon glyphicon-pencil\"></span>
-                <span class=\"glyphicon glyphicon-question-sign\"></span>
+                <a style = \"color:white;\" href = \"\"><span class=\"glyphicon glyphicon-home\"></span></a>
+                <a style = \"color:white;\" href = \"ideas.php\"><span class=\"glyphicon glyphicon-envelope\"></span></a>
+                <a style = \"color:white;\" href=\"submit.php\"><span class=\"glyphicon glyphicon-pencil\"></span></a>
+                <a style = \"color:white;\" href=\"about.html\"><span class=\"glyphicon glyphicon-question-sign\"></span></a>
             </div>
             ";
             $pg_conn = pg_connect(pg_connection_string_from_database_url());
