@@ -13,8 +13,8 @@
         }
         $pg_conn = pg_connect(pg_connection_string_from_database_url());
         $timezone = date_default_timezone_set("America/New_York");
-        $today = date('m/d/Y');
-        $major = $_POST['newmajor'];
+        $today = pg_escape_string(date('m/d/Y'));
+        $major = pg_escape_string($_POST['newmajor']);
         $query = "INSERT INTO benmajor VALUES($today,$major)";
         $result = pg_query($query);
         if (!$result) { ?>  <div class = "cornericons">
