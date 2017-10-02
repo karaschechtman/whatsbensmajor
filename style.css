@@ -32,7 +32,7 @@
 input {
     width: 100%;
     border:0px white;
-    background-color:red;
+    background-color:teal;
     color:white;
     outline:none;
     text-align:center;
@@ -59,7 +59,7 @@ input {
 
 body {
     margin:0px;
-    background-color:red;
+    background-color:teal;
     color:white;
     font-family: 'Noto Serif', serif;
     font-size:30px;
